@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resistor Color Code Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Resistor Color Code Calculator</h1>
+
+        <div class="flex-container">
+            <div class="form-group">
+                <label for="bands">Number of Bands:</label>
+                <select id="bands" onchange="updateBands()">
+                    <option value="4">4 Bands</option>
+                    <option value="5">5 Bands</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="band1">Band 1:</label>
+                <select id="band1" onchange="calculateResistance()"></select>
+            </div>
+
+            <div class="form-group">
+                <label for="band2">Band 2:</label>
+                <select id="band2" onchange="calculateResistance()"></select>
+            </div>
+
+            <div class="form-group">
+                <label for="band3">Band 3:</label>
+                <select id="band3" onchange="calculateResistance()"></select>
+            </div>
+
+            <div class="form-group">
+                <label for="band4">Multiplier:</label>
+                <select id="band4" onchange="calculateResistance()"></select>
+            </div>
+
+            <div class="form-group" id="band5Container" style="display: none;">
+                <label for="band5">Tolerance:</label>
+                <select id="band5" onchange="calculateResistance()"></select>
+            </div>
+        </div>
+
+        <h2>Resistor Value: <span id="resistance">0.0000</span> kΩ</h2>
+        <h2>Tolerance: <span id="tolerance">N/A</span></h2>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Band 1</th>
+                    <th>Band 2</th>
+                    <th>Band 3</th>
+                    <th>Multiplier</th>
+                    <th>Tolerance</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td id="band1Color"></td>
+                    <td id="band2Color"></td>
+                    <td id="band3Color"></td>
+                    <td id="band4Color"></td>
+                    <td id="band5Color"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
